@@ -1,4 +1,4 @@
-public class DriveLS {
+public class DriveLinkedlistStack {
     public static void main(String[] args) {
 
         LinkedStack<String> stack = new LinkedStack<>();
