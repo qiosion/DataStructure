@@ -1,4 +1,4 @@
-public class DriveAS {
+public class DriveArrayStack {
     public static void main(String[] args) {
 
         ArrayStack<String> stack = new ArrayStack<>(5);
