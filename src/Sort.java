@@ -85,7 +85,7 @@ public class Sort {
                     }
                 } else { // isAscend == false
                     if (array[j] < array[j+1]) {
-                        swap(array, j+1, j);
+                        swap(array, j, j+1);
                     }
                 }
                 System.out.println(Arrays.toString(array));
