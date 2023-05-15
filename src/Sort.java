@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SelectionSort {
+public class Sort {
     // 최소값을 찾는 메서드
     static int findMin (int[] array) {
         int minValue = array[array.length-1];
@@ -61,24 +61,47 @@ public class SelectionSort {
         array[y] = temp;
     }
 
-    // 정렬 sort 메서드 + 오름차순 / 내림차순
+    // 선택정렬 selection sort 메서드 + 오름차순 / 내림차순
     static void select_sort (int[] array, boolean isAscend) {
         int selected_idx = 0;
 
         for (int i = 0; i < array.length; i++) {
-            if (isAscend == true) { // 오름차순
+            if (isAscend) { // 오름차순 // isAscend == true
                 selected_idx = argmin(array, i);
-            } else { // 내림차순
+            } else { // 내림차순 // isAscend == false
                 selected_idx = argmax(array, i);
             }
             swap(array, selected_idx, i); // swap
         }
     }
 
+    // 버블정렬 메서드 bubble sort
+    static void bubble_sort(int[] array, boolean isAscend) {
+        for (int i = array.length-1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (isAscend) { // isAscend == true
+                    if (array[j] > array[j+1]) {
+                        swap(array, j, j+1);
+                    }
+                } else { // isAscend == false
+                    if (array[j] < array[j+1]) {
+                        swap(array, j+1, j);
+                    }
+                }
+                System.out.println(Arrays.toString(array));
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int[] array = {69, 10, 30, 2, 16, 8, 31, 22};
-        System.out.println(Arrays.toString(array));
-        select_sort(array, false);
-        System.out.println(Arrays.toString(array));
+        // 선택정렬 확인
+//        System.out.println(Arrays.toString(array));
+//        select_sort(array, false);
+//        System.out.println(Arrays.toString(array));
+
+        // 버블정렬 확인
+        bubble_sort(array, true);
+        bubble_sort(array, false);
     }
 }
