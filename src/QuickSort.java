@@ -45,7 +45,7 @@ public class QuickSort {
         // 만났으면 피봇의 위치랑 R이랑 바꾼다.
         // 그리고 R이 있던 자리가 피봇의 자리로 확정된다
         swap(a, pivot, R);
-
+//        System.out.println("피봇은 " + pivot);
         System.out.println(Arrays.toString(a));
 
         return R; // R이 있던 자리가 피봇이 됨
